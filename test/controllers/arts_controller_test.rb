@@ -17,7 +17,7 @@ class ArtsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create art" do
     assert_difference('Art.count') do
-      post arts_url, params: { art: { author: @art.author, description: @art.description, dimensions: @art.dimensions, photo: @art.photo, title: @art.title, year: @art.year } }
+      post arts_url, params: { art: { author: @art.author, description: @art.description, theme: @art.theme, photo: @art.photo, title: @art.title, year: @art.year } }
     end
 
     assert_redirected_to art_url(Art.last)
@@ -34,7 +34,7 @@ class ArtsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update art" do
-    patch art_url(@art), params: { art: { author: @art.author, description: @art.description, dimensions: @art.dimensions, photo: @art.photo, title: @art.title, year: @art.year } }
+    patch art_url(@art), params: { art: { author: @art.author, description: @art.description, theme: @art.theme, photo: @art.photo, title: @art.title, year: @art.year } }
     assert_redirected_to art_url(@art)
   end
 
